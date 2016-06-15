@@ -50,8 +50,7 @@ namespace StringSafari
         /// <returns>true if the string has at least two zebras in it, false otherwise</returns>
         public static bool HasADazzle(string str)
         {
-            // TODO
-            return false;
+            return str.Contains("zebra");
         }
 
         /// <summary>
@@ -63,8 +62,7 @@ namespace StringSafari
         /// <returns>true if the string has at least two lions in it, false otherwise</returns>
         public static bool HasAPride(string str)
         {
-            // TODO
-            return false;
+            return str.Contains("LION");
         }
 
         /// <summary>
