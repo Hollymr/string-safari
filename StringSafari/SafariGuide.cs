@@ -17,6 +17,11 @@ namespace StringSafari
         public static bool HasBabyZebra(string str)
         {
             return str.Contains("zebra");
+
+            // if (str.Contains("zebra")
+            // {return true;}
+            //else
+            //{return false;}
         }
 
         /// <summary>
@@ -28,6 +33,11 @@ namespace StringSafari
         public static bool HasAdultZebra(string str)
         {
             return str.Contains("ZEBRA");
+
+            //if (str.Contains("ZEBRA")
+            //{return true;}
+            //else
+            //{return false;}
         }
 
         /// <summary>
@@ -39,7 +49,14 @@ namespace StringSafari
         /// <returns>true if the string has a zebra in it, false otherwise</returns>
         public static bool HasZebra(string str)
         {
-            return str.ToLower() == ("zebra");
+            
+            return HasBabyZebra (str.ToLower());
+
+            //string newString = str.ToLower();
+            //return HasBabyZebra(newString);
+
+            //return str.ToLower().Contains("zebra");
+
         }
 
         /// <summary>
@@ -50,18 +67,41 @@ namespace StringSafari
         /// <returns>true if the string has at least two zebras in it, false otherwise</returns>
         public static bool HasADazzle(string str)
         {
-            int fisrtZebra = str.IndexOf("zebra");
-            int lastZebra = str.LastIndexOf("zebra");
-            int numberOfZebras = lastZebra - fisrtZebra;
-            if (numberOfZebras >= 2)
+
+            // "lion zebra zebra"
+            //  0123456789012345
+
+
+            string newString = str.ToLower();
+            int firstZebra = newString.IndexOf("zebra");
+            int lastZebra = newString.LastIndexOf("zebra");
+
+            if (firstZebra == lastZebra)
             {
-                return true;
+                // only one zebra!
+                return false;
             }
             else
             {
-                return false;
+                // at least two zebras
+                return true;
             }
+
+            //int fisrtZebra = str.IndexOf("zebra");
+            // int lastZebra = str.LastIndexOf("zebra");
+            //int numberOfZebras = lastZebra - fisrtZebra;
+            // if (numberOfZebras >= 2)
+            // {
+            //     return true;
+            // }
+            // else
+            // {
+            // return false;
         }
+
+          
+        
+   
 
     
         /// <summary>
@@ -74,16 +114,19 @@ namespace StringSafari
         public static bool HasAPride(string str)
         {
             str = str.ToLower();
-            int fisrtLion = str.IndexOf("lion");
-            int lastLion = str.LastIndexOf("lion");
-            int numberOfLions = lastLion - fisrtLion;
-            if (numberOfLions >= 2)
+            string newString = str.ToLower();
+            int firstZebra = newString.IndexOf("zebra");
+            int lastZebra = newString.LastIndexOf("zebra");
+
+            if (firstZebra == lastZebra)
             {
-                return true;
+                // only one zebra!
+                return false;
             }
             else
             {
-                return false;
+                // at least two zebras
+                return true;
             }
         }
 
