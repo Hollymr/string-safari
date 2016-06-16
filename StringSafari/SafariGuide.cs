@@ -64,7 +64,6 @@ namespace StringSafari
         }
 
     
-
         /// <summary>
         /// Looks for at least two lions in <paramref name="str"/>.
         /// <para>A lion is the letters "LION", in any case combination (upper or lower)</para>
@@ -74,7 +73,18 @@ namespace StringSafari
         /// <returns>true if the string has at least two lions in it, false otherwise</returns>
         public static bool HasAPride(string str)
         {
-            return str.Contains("LION");
+            str = str.ToLower();
+            int fisrtLion = str.IndexOf("lion");
+            int lastLion = str.LastIndexOf("lion");
+            int numberOfLions = lastLion - fisrtLion;
+            if (numberOfLions >= 2)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         /// <summary>
@@ -85,8 +95,15 @@ namespace StringSafari
         /// <returns>true if the string has at least two lions in it and just one zebra, false otherwise</returns>
         public static bool ThereWillBeBlood(string str)
         {
-            // TODO
-            return false;
+            if (HasAPride(str) && !HasADazzle(str))
+                {
+                return true;
+            }
+
+            else
+            {
+                return false; 
+            }
         }
 
         /// <summary>
